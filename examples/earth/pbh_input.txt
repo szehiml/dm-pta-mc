@@ -1,0 +1,84 @@
+# input parameter file for the MC
+
+# Number of realizations. Should not be greater than the number of CPUs
+NUM_UNIVERSE = 6
+
+# log10 of the DM fraction
+LOG10_F = 1.
+
+# log10 of the DM mass. This will be ignored if USE_HMF == True.
+LOG10_M = -6
+
+# Number of pulsars
+NUM_PULSAR = 200
+
+# Observation time of the MC in years
+T_YR = 20
+
+# Cadence of the pulsars in weeks
+DT_WEEK = 2.
+
+# RMS time of the pulsars in ns
+T_RMS_NS = 50.
+
+# Radius of the simulation sphere divided by (v_bar * T), where v_bar is the mean velocity and T is the observation time
+R_FACTOR = 2.
+
+# Minimum number of halos in the MC
+MIN_NUM_OBJECT = 1
+
+# Flag for using a halo mass function
+USE_HMF = False
+
+# Path for the table of the halo mass function, This will be ignored if USE_HMF == False.
+# For the HMF table, the 1st column should be mass in M_sun and the 2nd column should be dn / dlog10(M) in pc^-3, where n is the halo density.
+HMF_PATH = None
+
+# log10 minimum mass of the halo. This will be ignored if USE_HMF == False.
+LOG10_M_MIN = None 
+
+# Flag for using halos with a NFW density profile
+USE_FORM = False
+
+# Concentration parameter for the NFW halos. This will be ignored if USE_FORM == False or USE_CM == True.
+C = 10E8
+
+# Concentration-Mass relation for the NFW halos. This will be ignored if USE_FORM == False.
+USE_CM = False
+
+# Path for the table fo the concentration-mass relation. This will be ignored if USE_FORM == False or USE_CM == False
+# For the concentration-mass table, the 1st column should be mass in M_sun and the 2nd column should be the concentration c.
+CM_PATH = None
+
+# Flag for only considering a fraction of the closest halos. This speeds up the MC but might underestimate the SNR.
+USE_CLOSEST = False
+
+# Percentage of the closest halos to keep. This will be ignored if USE_CLOSEST == False.
+PERCENT_CLOSEST = None
+
+# Divide the halos into chunks before computing the phase shift to save memory.
+USE_CHUNK = True
+
+# Number of halos in each chunks. A good value is 10000. This will be ignored if USE_CHUNK == False.
+CHUNK_SIZE = 10000
+
+# Directory to store the output data
+OUTPUT_DIR = data/
+
+# Calculation type
+CALC_TYPE = earth
+
+# v0
+V_0_KM_PER_SEC = 325
+
+# Earth velocity
+V_E_KM_PER_SEC = 240
+
+# Escape velocity
+V_ESC_KM_PER_SEC = 600
+
+# Average velocity
+V_BAR_KM_PER_SEC = 340
+
+# decription of the calculation
+RUN_DESCRIP = pbh_testing
