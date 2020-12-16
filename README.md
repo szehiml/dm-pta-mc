@@ -16,7 +16,7 @@ Create the conda environment with:
 
 ## Usage
 
-The MC is parallelized using Open MPI. Check the documentation of your system for instruction to load this module. It can usually be loaded with
+The MC is parallelized using Open MPI. Check the documentation of your system for instruction to load this module. On HPC system it can usually be loaded with
 
     module load openmpi/4.0.4
 
