@@ -1,7 +1,7 @@
 # input parameter file for the MC
 
 # Number of realizations. Should not be greater than the number of CPUs
-NUM_UNIVERSE = 1000
+NUM_UNIVERSE = 100
 
 # log10 of the DM fraction
 LOG10_F = 0.

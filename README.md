@@ -26,9 +26,13 @@ in the examples foler:
 - pbh_input.txt: exmple input file for PBH (monochromatic halo mass function, point mass)
 - AX_input.txt: example input file for axion minicluster 
 
+Example data for the axion minicluster model can be found in /examples/data/.
+
 Details of each parameter can be found in the example input files.
 
 The output is saved in the /data folder.
+
+The module that computes the signal shape is /src/signals.py
 
 <!-- 2. Supplementary module (signal shape) -->
 

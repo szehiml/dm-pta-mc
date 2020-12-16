@@ -2,69 +2,74 @@
     Collection of useful functions which handle parallelizing the main program
 """
 
-import numpy as np 
+import numpy as np
+
 
 def generate_job_list(n_proc, total_job_list):
-	"""
-	Will generate the job list to send to the processors.
+    """
+    Will generate the job list to send to the processors.
 
-	total_job_list - all of the jobs that need to be done
-	"""
+    total_job_list - all of the jobs that need to be done
+    """
 
-	n_jobs = len(total_job_list)
+    n_jobs = len(total_job_list)
 
-	len_job = total_job_list.shape[1]
+    len_job = total_job_list.shape[1]
 
-	if n_jobs > n_proc:
+    if n_jobs > n_proc:
 
-		print('\tNumber of jobs is greater than the the number of processors.')
-		print()
+        print("\tNumber of jobs is greater than the the number of processors.")
+        print()
 
-		n_extra_jobs = n_jobs // n_proc 
+        n_extra_jobs = n_jobs // n_proc
 
-		job_list = np.zeros((n_proc, 1 + n_extra_jobs, len_job))
+        job_list = np.zeros((n_proc, 1 + n_extra_jobs, len_job))
 
-		count = 0
+        count = 0
 
-		for i in range(n_proc):
+        for i in range(n_proc):
 
-			for j in range(n_extra_jobs + 1):
+            for j in range(n_extra_jobs + 1):
 
-				if count < n_jobs:
-					job_list[i, j, :] = total_job_list[count, :]
-				else:
-					job_list[i, j, :] = -1*np.ones(len_job)
+                if count < n_jobs:
+                    job_list[i, j, :] = total_job_list[count, :]
+                else:
+                    job_list[i, j, :] = -1 * np.ones(len_job)
 
-				count = count + 1
+                count = count + 1
 
-	elif n_jobs < n_proc:
+    elif n_jobs < n_proc:
 
-		n_jobs_per_proc = 1
+        n_jobs_per_proc = 1
 
-		job_list = np.zeros((n_proc, n_jobs_per_proc, len_job))
+        job_list = np.zeros((n_proc, n_jobs_per_proc, len_job))
 
-		print('\tNumber of jobs is less than the number of processors. '+
-				'Consider running with a smaller number of processors.')
-		print()
+        print(
+            "\tNumber of jobs is less than the number of processors. "
+            + "Consider running with a smaller number of processors."
+        )
+        print()
 
-		for i in range(n_proc):
+        for i in range(n_proc):
 
-			if i < n_jobs:
+            if i < n_jobs:
 
-				job_list[i, 0, :] = total_job_list[i, :]
+                job_list[i, 0, :] = total_job_list[i, :]
 
-			else:
+            else:
 
-				job_list[i, 0, :] = -1*np.ones(len_job)
+                job_list[i, 0, :] = -1 * np.ones(len_job)
 
-	else:
+    else:
 
-		print('\tNumber of jobs equal to the number of processors. Maximally parallized.')
-		print()
+        print(
+            "\tNumber of jobs equal to the number of processors. Maximally parallized."
+        )
+        print()
 
-		n_jobs_per_proc = 1
-		job_list = np.zeros((n_proc, n_jobs_per_proc, len_job))
+        n_jobs_per_proc = 1
+        job_list = np.zeros((n_proc, n_jobs_per_proc, len_job))
 
-		job_list[:, 0, :] = total_job_list[:, :]
+        job_list[:, 0, :] = total_job_list[:, :]
 
-	return job_list 
+    return job_list

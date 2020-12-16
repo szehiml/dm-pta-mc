@@ -1,10 +1,10 @@
 # input parameter file for the MC
 
 # Number of realizations. Should not be greater than the number of CPUs
-NUM_UNIVERSE = 6
+NUM_UNIVERSE = 100
 
 # log10 of the DM fraction
-LOG10_F = 1.
+LOG10_F = 0.
 
 # log10 of the DM mass. This will be ignored if USE_HMF == True.
 LOG10_M = -6
@@ -41,7 +41,7 @@ LOG10_M_MIN = None
 USE_FORM = False
 
 # Concentration parameter for the NFW halos. This will be ignored if USE_FORM == False or USE_CM == True.
-C = 10E8
+C = 1E8
 
 # Concentration-Mass relation for the NFW halos. This will be ignored if USE_FORM == False.
 USE_CM = False

@@ -1,7 +1,7 @@
 # input parameter file for the MC
 
 # Number of realizations. Should not be greater than the number of CPUs
-NUM_UNIVERSE = 20
+NUM_UNIVERSE = 100
 
 # log10 of the DM fraction
 LOG10_F = 0.
@@ -25,17 +25,17 @@ T_RMS_NS = 50.
 R_FACTOR = 2.
 
 # Minimum number of halos in the MC
-MIN_NUM_OBJECT = 1
+MIN_NUM_OBJECT = 100
 
 # Flag for using a halo mass function
 USE_HMF = True
 
 # Path for the table of the halo mass function, This will be ignored if USE_HMF == False.
 # For the HMF table, the 1st column should be mass in M_sun and the 2nd column should be dn / dlog10(M) in pc^-3, where n is the halo density.
-HMF_PATH = ./examples/earth/HMF_AX
+HMF_PATH = ./examples/data/sub_HMF_tid_AX1
 
 # log10 minimum mass of the halo. This will be ignored if USE_HMF == False.
-LOG10_M_MIN = -14. 
+LOG10_M_MIN = -13. 
 
 # Flag for using halos with a NFW density profile
 USE_FORM = True
@@ -48,7 +48,7 @@ USE_CM = True
 
 # Path for the table fo the concentration-mass relation. This will be ignored if USE_FORM == False or USE_CM == False
 # For the concentration-mass table, the 1st column should be mass in M_sun and the 2nd column should be the concentration c.
-CM_PATH = ./examples/earth/c_AX
+CM_PATH = ./examples/data/c_AX1
 
 # Flag for only considering a fraction of the closest halos. This speeds up the MC but might underestimate the SNR.
 USE_CLOSEST = False
@@ -66,7 +66,7 @@ CHUNK_SIZE = 10000
 OUTPUT_DIR = data/
 
 # Calculation type
-CALC_TYPE = pulsar
+CALC_TYPE = earth
 
 # v0
 V_0_KM_PER_SEC = 325
