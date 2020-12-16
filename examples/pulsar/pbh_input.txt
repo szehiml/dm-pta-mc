@@ -51,6 +51,7 @@ USE_CM = False
 CM_PATH = None
 
 # Flag for only considering a fraction of the closest halos. This speeds up the MC but might underestimate the SNR.
+# Currently not supported
 USE_CLOSEST = False
 
 # Percentage of the closest halos to keep. This will be ignored if USE_CLOSEST == False.
