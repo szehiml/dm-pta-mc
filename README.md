@@ -16,6 +16,10 @@ Create the conda environment with:
 
 ## Usage
 
+The MC is parallelized using Open MPI. Check the documentation of your system for instruction to load this module. It can usually be loaded with
+
+    module load openmpi/4.0.4
+
 Once in the conda environment, from the main folder run
 
     mpirun -np 100 python dm-pta-mc.py input.txt
@@ -52,4 +56,4 @@ The MC was authored by Vincent Lee and Tanner Trickle. Contributors include Andr
 Citation
 --------
 
-ArXiv link to the paper associated to this code will be posted shortly.
+ArXiv link to the paper associated to this code will be added shortly.
