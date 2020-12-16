@@ -43,7 +43,7 @@ The output is saved in the /data folder.
 Contributors
 ------------
 
-The MC was authored by Vincent Lee. Contributors include Andrea Mitridate and Tanner Trickle.
+The MC was authored by Vincent Lee and Tanner Trickle. Contributors include Andrea Mitridate.
 
 Citation
 --------
